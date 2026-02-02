@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 	"portScanner/internal/scan"
 	"strconv"
 	"strings"
@@ -22,6 +23,7 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Error parsing ports: %v\n", err)
+		os.Exit(0)
 	}
 
 	scanner.Scan(hostname, threads, startPort, endPort)
