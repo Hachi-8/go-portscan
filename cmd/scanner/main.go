@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/hachi-8/go-portscan/internal/scan"
 	"os"
-	"portScanner/internal/scan"
 	"strconv"
 	"strings"
 )
