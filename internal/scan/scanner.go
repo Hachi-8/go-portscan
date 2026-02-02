@@ -61,7 +61,8 @@ func worker(host string, ports <-chan int, results chan<- int, wg *sync.WaitGrou
 }
 
 func check_if_port_open(host string, port int) bool {
-	conn, err := net.DialTimeout("tcp", host+":"+strconv.Itoa(port), 1*time.Second)
+	address := net.JoinHostPort(host, strconv.Itoa(port))
+	conn, err := net.DialTimeout("tcp", address, 1*time.Second)
 	if err != nil {
 		return false
 	}
