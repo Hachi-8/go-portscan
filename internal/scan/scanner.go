@@ -33,7 +33,7 @@ func Scan(host string, threads int, startPort int, endPort int) {
 	}()
 
 	// portsに対象のポートを流し込む
-	for i := startPort; i < endPort; i++ {
+	for i := startPort; i <= endPort; i++ {
 		ports <- i
 	}
 	close(ports)
